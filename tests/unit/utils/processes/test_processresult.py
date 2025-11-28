@@ -8,7 +8,10 @@ import logging
 import textwrap
 
 import pytest
-from pytest_subtests import SubTests
+try:
+    from pytest import Subtests as SubTests
+except ImportError:
+    from pytest_subtests import SubTests
 
 from pytestshellutils.utils.processes import ProcessResult
 

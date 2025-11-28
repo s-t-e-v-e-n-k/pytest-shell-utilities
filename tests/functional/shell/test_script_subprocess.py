@@ -8,7 +8,10 @@ from typing import Any
 from typing import cast
 
 import pytest
-from pytest_subtests import SubTests
+try:
+    from pytest import Subtests as SubTests
+except ImportError:
+    from pytest_subtests import SubTests
 
 from pytestshellutils.customtypes import EnvironDict
 from pytestshellutils.exceptions import FactoryTimeout
